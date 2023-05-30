@@ -10,7 +10,21 @@ import com.dal.controller.EmployeeController;
 public class MainClass {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Welcome EMS");
+		 System.out.println("Logging in...");
+		 
+		 try {
+	            System.out.print("Loading");
+	            for (int i = 0; i < 5; i++) {
+	                Thread.sleep(1000); // Sleep for 1 second
+	                System.out.print(".");
+	          }
+		 } catch (InterruptedException e) {
+	               e.printStackTrace();
+	        }
+
+	        System.out.println("\nLogin successful!");
+	        
+	   	System.out.println("Welcome EMS");
 		EmployeeController ec = new  EmployeeController();	
 		Scanner sc = new Scanner(System.in);	
 		String ch=null;

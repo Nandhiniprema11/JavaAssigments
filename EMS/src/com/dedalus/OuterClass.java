@@ -22,5 +22,6 @@ class OuterClass
 
 	OuterClass oc = new OuterClass();
 	oc.method();
+	
 	}
 }

@@ -10,7 +10,7 @@ class DeSerialEg
 		FileInputStream fis = new FileInputStream("dedalus.txt");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		
-		Employee emp = (Employee)ois.readObject();
+		Employee1 emp = (Employee1)ois.readObject();
 		System.out.println("DeSerilized from file dedalus.txt");
 		System.out.println(emp.getEno());
 		System.out.println(emp.getEname());
