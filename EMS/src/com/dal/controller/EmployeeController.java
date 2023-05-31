@@ -1,8 +1,7 @@
 package com.dal.controller;
 
 import java.io.BufferedReader;
-
-
+import dado.dal.com.EmployeeDao;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,7 +18,7 @@ import java.io.Serializable;
 
 import com.dal.model.Employee1;
 //import com.dedalus.Employee;
-import com.dedalus.Employee;
+//import com.dedalus.Employee;
 
 public class EmployeeController implements EmployeeInterface {
 	
@@ -72,10 +71,14 @@ public class EmployeeController implements EmployeeInterface {
 	}
 	
 	public void viewEmployee() {
-		System.out.println(emp.getEmpno());
-		System.out.println(emp.getEname());
+		//System.out.println(emp.getEmpno());
+		//System.out.println(emp.getEname());
 		
-		System.out.println(emplist);
+		//System.out.println(emplist);
+		Iterator<Employee1> i = emplist.iterator();
+		while(i.hasNext()){
+		System.out.println(i.next());
+		}
 	}
 	
 public void SeriEmployee() throws IOException
@@ -92,28 +95,15 @@ public void SeriEmployee() throws IOException
             ObjectOutputStream ois1 = new ObjectOutputStream(fis1);
             
     		
-    		//Employee1 emp = new Employee1();
-            
-    		System.out.println(emp.getEmpno());
-    		System.out.println(emp.getEname());
-    		
-    		System.out.println("0111111111111");
-    		
+    		//Employee1 emp = new Employee1();         		
+        		
     		System.out.println(emplist);
     	
     		ois1.writeObject(emp.getEmpno());
-    		ois1.writeObject(emp.getEname());
-    				
-    		//ois1.writeObject(emplist);
-    		//ois1.writeObject(emp.getEname());
+    		ois1.writeObject(emp.getEname());   				
+      		
     		
-    		System.out.println("33333333333");
-    		
-    		
-    		System.out.println("Serialized from file dedalus.txt");
-    		System.out.println(emp.getEmpno());
-    		System.out.println(emp.getEname());
-    		
+    		System.out.println("Serialized from file dedalus.txt");      		
              
             // Method for serialization of object
             //out.writeObject(object);
@@ -136,26 +126,15 @@ public void SeriEmployee() throws IOException
 	public void DeseEmployee() throws IOException
 	{
 		
-		try{
-			
-			System.out.println("0111111111111");
-		
+		try{		
+	
 	
 		FileInputStream fis = new FileInputStream("dedalus.txt");
 		ObjectInputStream ois = new ObjectInputStream(fis);		
-	
-		System.out.println("0222222222222222222");
-		
-		System.out.println(emp.getEmpno());
-		System.out.println(emp.getEname());
 		
 		Serializable emp = (Serializable)ois.readObject();
 		
-		//ois.readObject(emp.getEmpno());
-		//ois.readObject(emp.getEname());
-		
-		System.out.println("666666666666666");
-		
+			
 		System.out.println("DeSerilized from file dedalus.txt");
 		//System.out.println(emp.getEmpno());
 		//System.out.println(emp.getEname());
@@ -173,5 +152,23 @@ public void SeriEmployee() throws IOException
 
 	
 	}
+	
+	public void InsertEmployee() {
+		EmployeeDao ed =new EmployeeDao();
+		ed.insertEmployee(emp);
+		ed.showEmployee();
+	}
+	
+	public void updateEmployee() {
+		EmployeeDao ed =new EmployeeDao();
+		ed.updateEmployee(emp);
+		ed.showEmployee();
+	}
 
+	public void deleteEmployee() {
+		EmployeeDao ed =new EmployeeDao();
+		ed.deleteEmployee(emp);
+		ed.showEmployee();
+	}
+	
 }
