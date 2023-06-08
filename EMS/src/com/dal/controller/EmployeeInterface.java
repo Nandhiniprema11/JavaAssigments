@@ -5,6 +5,7 @@ import java.io.IOException;
 public interface EmployeeInterface {
 	public void addEmployee();
 	public void viewEmployee();
+	public void sortEmployee();
 	public void SeriEmployee() throws IOException;
 	public void DeseEmployee() throws IOException;
 }

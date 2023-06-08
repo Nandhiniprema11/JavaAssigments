@@ -1,6 +1,7 @@
 package com.dal.controller;
 
 import java.io.BufferedReader;
+
 import dado.dal.com.EmployeeDao;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,14 +12,16 @@ import java.io.OutputStreamWriter;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.io.Serializable;
 
 import com.dal.model.Employee1;
-//import com.dedalus.Employee;
-//import com.dedalus.Employee;
+//import com.mph.sorteg.Student;
+
 
 public class EmployeeController implements EmployeeInterface {
 	
@@ -78,8 +81,23 @@ public class EmployeeController implements EmployeeInterface {
 		Iterator<Employee1> i = emplist.iterator();
 		while(i.hasNext()){
 		System.out.println(i.next());
-		}
+		}			
 	}
+	
+	
+	public void sortEmployee() {
+		System.out.println("Sorted List2121212=="+emplist);
+			Collections.sort(emplist);
+			System.out.println("Sorted List==" +emplist);
+		}
+	
+	/*public static Comparator<Employee1> employeeComparator = new Comparator<Employee1>() {
+
+			public int compare(Student s1, Student s2) {
+			
+			return (s1.getMarks() - s2.getMarks());
+		}*/
+	
 	
 public void SeriEmployee() throws IOException
 	{

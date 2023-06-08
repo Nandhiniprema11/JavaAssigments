@@ -1,17 +1,22 @@
 package com.dal.view;
 
 import java.io.*;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.function.BiPredicate;
 import java.io.Serializable;
+import java.sql.Connection;
+
 import com.dal.controller.EmployeeController;
 import com.dal.controller.UserNotFoundException;
+import util.deda.com.MyDbConnection;
 
 public class MainClass implements Serializable {
 
 	public static void main(String[] args) throws IOException {
+		Connection con;
 		 System.out.println("Logging in...");
 		 
 		 try {
@@ -28,6 +33,8 @@ public class MainClass implements Serializable {
 	        
 	   	System.out.println("Welcome EMS");
 		EmployeeController ec = new  EmployeeController();
+		
+		con =MyDbConnection.getMyConnection();
 		//EmployeeDao ed = new EmployeeDao();
 		Scanner sc = new Scanner(System.in);	
 		String ch=null;
@@ -66,6 +73,8 @@ public class MainClass implements Serializable {
 			System.out.println("5. Insertion in DB");
 			System.out.println("6. Updation in DB");
 			System.out.println("7. Deletion in DB");
+			System.out.println("8. Compare Employee");
+			System.out.println("9. Sort Employee");
 			
 			int choice = sc.nextInt();
 			switch(choice) {
@@ -108,6 +117,20 @@ public class MainClass implements Serializable {
 				ec.deleteEmployee();
 				break;
 			}
+			
+	      case 8:
+				
+	   			{
+	   				ec.sortEmployee();
+	   				break;
+	   			}
+	   			
+	      case 9:
+				
+	  			{
+	  				ec.sortEmployee();
+	  				break;
+	  			}
 		
 	    default : {
 		System.out.println("Enter a valid number");

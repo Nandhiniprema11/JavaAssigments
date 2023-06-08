@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author nlakshiyavat
+ *
+ */
+module DesignPattern {
+}
