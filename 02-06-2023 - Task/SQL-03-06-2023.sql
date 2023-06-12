@@ -80,4 +80,13 @@ SELECT Empno, Deptno FROM EMP;
 
 20. Define a variable representing the expression used to calculate on emps total annual remuneration use the variable in a statement which finds all emps 
 
-who can earn 30000 a year or more.
+who can earn 30000 a year or 
+
+SELECT
+  sal,
+  comm,
+  (sal + comm ) AS total_remuneration
+FROM
+  emp
+WHERE
+  (sal + comm ) >= 30000;
