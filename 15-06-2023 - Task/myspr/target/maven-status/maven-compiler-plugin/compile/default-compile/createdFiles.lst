@@ -1,0 +1,14 @@
+com\dal\setter\User.class
+com\dal\employee\MyConn.class
+com\dal\employee\Employee.class
+com\dal\Mainclass.class
+com\dal\setter\SMainClass.class
+com\dal\xmlconfig\AppConfig.class
+com\dal\props\PropsMain.class
+com\dal\Welcome.class
+com\dal\xmlconfig\GreetingServiceImpl.class
+com\dal\props\MyDao.class
+com\dal\setter\Car.class
+com\dal\xmlconfig\ConfigMainClass.class
+com\dal\xmlconfig\GreetingService.class
+com\dal\employee\MainEmp.class
